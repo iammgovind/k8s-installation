@@ -21,6 +21,20 @@ sudo mv /tmp/eksctl /usr/local/bin
   ]
 
 
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mongo-pvc
+  namespace: fullstack
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 5Gi
+
+
+
 package main
 
 import (
