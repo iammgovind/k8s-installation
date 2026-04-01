@@ -21,6 +21,16 @@ sudo mv /tmp/eksctl /usr/local/bin
   ]
 }
 
+eksctl create cluster \
+--name fullstack-cluster \
+--region ap-south-1 \
+--nodegroup-name workers \
+--node-type t3.medium \
+--nodes 2 \
+--nodes-min 1 \
+--nodes-max 3
+
+
 
 Install Kubectl:
 curl -O https://s3.us-west-2.amazonaws.com/amazon-eks/1.24.11/2023-03-17/bin/linux/amd64/kubectl
