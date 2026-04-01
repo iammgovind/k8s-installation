@@ -53,6 +53,27 @@ EXPOSE 8080
 CMD ["./main"]
 
 
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fullstack App</title>
+</head>
+<body>
+    <h1>Frontend is Working!</h1>
+    <button onclick="callAPI()">Call Backend</button>
+    <p id="output"></p>
+
+    <script>
+        async function callAPI() {
+            const res = await fetch("http://<EC2-IP>:8080");
+            const data = await res.text();
+            document.getElementById("output").innerText = data;
+        }
+    </script>
+</body>
+</html>
+
+
 
 
 
